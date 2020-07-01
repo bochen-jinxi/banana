@@ -25,8 +25,74 @@ namespace SampleApp
 
         private static List<string> arrayStock = new List<string>
         {
-            "美谷朱里",
-            "村上里沙",
+                "北川景",
+            "立花美",
+            "仁科百",
+            "佐佐木",
+            "本田翼",
+            "有村架",
+            "小嶋阳",
+            "天使萌",
+            "七泽米",
+            "星奈爱",
+
+            "户田真",
+            "樱井莉",
+            "藤泽安",
+            "真白希",
+            "松岛枫",
+            "大桥未",
+            "秋野千",
+            "日向优",
+            "上原保奈",
+            "立川理",
+            "上原志",
+            "白石优",
+            "名空",
+            "百多惠 ",
+            "河合乃 ",
+            "桥本有   ",
+            "三上悠   ",
+            "吉高宁宁   ",
+            "坂道美琉   ",
+
+            "明日花 ",
+
+            "香坂紗梨   ",
+            "北川礼子   ",
+
+            "彩乃奈   ",
+            "香椎梨   ",
+
+            "佐佐木明 ",
+            "相泽南     ",
+
+
+            "樱木凛     ",
+            "宇都宮 ",
+
+            "苍井空     ",
+
+            "水卜樱     ",
+            "市來美   ",
+
+            "天海翼     ",
+            "波多野结 ",
+            "江波凉     ",
+
+            "高桥圣  ",
+            "立花瑠  ",
+            "上原亚   ",
+            "园田美   ",
+        
+            "前田香",
+           
+            "葵千恵     ",
+            "葵司       ",
+            "九重环奈   ",
+
+            "美谷朱",
+            "村上里",
             "AIKA",
             "水野",
             "深田",
@@ -66,10 +132,28 @@ namespace SampleApp
             "松下纱荣子",
             "堀口奈津美",
             "石原莉奈",
+            "冲田杏梨",
+            "希岛",
+            "西野翔",
+            "佐山爱",
+            "市川雅美",
+            "古川",
+			"枢木葵",
+			"希志",
+		    "及川奈央",
+			"星奈爱",
+			"绀野",
+			"明里",
+			"吉泽明步",
+			"桃乃木",
+			"君岛美",
+			"羽田真",
+			"羽田爱",
+			
 
 
 
-                   
+
 
 
 
@@ -81,82 +165,7 @@ namespace SampleApp
 
         };
 
-        //private static List<string> arrayStock = new List<string>
-        //{
-        //    "新垣结衣",
-        //    "深田恭子",
-        //    "比嘉爱未",
-        //    "北川景子",
-        //    "立花美凉",
-        //    "仁科百华",
-        //    "佐佐木希",
-        //    "本田翼",
-        //    "有村架纯",
-        //    "小嶋阳菜",
-        //    "天使萌",
-        //    "七泽米亚",
-        //    "星奈爱",
-        //    "美谷朱里",
-        //    "户田真琴",
-        //    "樱井莉亚",
-        //    "藤泽安奈",
-        //    "真白希实",
-        //    "松岛枫",
-        //    "大桥未久",
-        //    "秋野千寻",
-        //    "日向优梨",
-        //    "上原保奈美",
-        //    "立川理惠",
-        //    "上原志织",
-        //    "白石优",
-        //    "名空",
-        //    "百多惠美里 ",
-        //    "河合乃乃香 ",
-        //    "桥本有菜   ",
-        //    "三上悠亚   ",
-        //    "吉高宁宁   ",
-        //    "坂道美琉   ",
-
-        //    "明日花绮罗 ",
-
-        //    "香坂紗梨   ",
-        //    "北川礼子   ",
-
-        //    "彩乃奈奈   ",
-        //    "香椎梨亚   ",
-
-        //    "佐佐木明希 ",
-        //    "相泽南     ",
-
-
-        //    "樱木凛     ",
-        //    "宇都宮紫苑 ",
-
-        //    "苍井空     ",
-
-        //    "水卜樱     ",
-        //    "市來美保   ",
-
-        //    "天海翼     ",
-        //    "波多野结衣 ",
-        //    "江波凉     ",
-
-        //    "高桥圣子   ",
-        //    "立花瑠莉   ",
-        //    "上原亚衣   ",
-        //    "园田美樱   ",
-        //    "明里紬     ",
-        //    "前田香织",
-        //    "吉沢明歩   ",
-        //    "葵千恵     ",
-        //    "葵司       ",
-        //    "九重环奈   ",
-
-
-
-
-
-        //};
+          
 
         private static ILogger<Program> logger;
         public static void Main(string[] args)
@@ -215,7 +224,7 @@ namespace SampleApp
             if (count2 > 0)
             {
 
-                logger.LogInformation(sb.ToString());
+                //logger.LogInformation(sb.ToString());
 
                 sb.Clear();
 
@@ -240,12 +249,19 @@ namespace SampleApp
 
 
 
-                sb2.Append(code).Append(i).Append(",").Append(string.IsNullOrEmpty(obj.data.httpurl) ? obj.data.httpurl_preview.Replace("https:","http:") : obj.data.httpurl.Replace("https:", "http:"));
+                sb2.Append(code).Append(i);
+                sb2.ToString().Replace(",", "");
+                sb2.Append(",")
+                    .Append(string.IsNullOrEmpty(obj.data.httpurl) ? obj.data.httpurl_preview.Replace("https:","http:") : obj.data.httpurl.Replace("https:", "http:"));
 
 
                 if (sb2.Length > 0)
                 {
-                    logger.LogError(sb2.ToString());
+
+                    
+
+
+                    logger.LogInformation("sb2.ToString()",null);
                     sb2.Clear();
 
                 }
