@@ -183,20 +183,24 @@ namespace SampleApp
                     .AddConfiguration(loggingConfiguration.GetSection("Logging"))
                     .AddFilter("Microsoft", LogLevel.Warning)
                     .AddFilter("System", LogLevel.Warning)
-                    .AddFilter("SampleApp.Program", LogLevel.Debug)
-                    .AddLog4Net()
-                    .AddConsole()
-                    .AddEventLog();
+                    .AddFilter("SampleApp.Program", LogLevel.Debug);
+                    //.AddLog4Net();
+                // .AddConsole();
+                // .AddEventLog();
             });
 
             // Make sure to dispose ILoggerFactory
             using var factory = loggerFactory;
             logger = loggerFactory.AddLog4Net().CreateLogger<Program>();
-            Console.WriteLine("先输入start运行，直到看到over后，输入continue继续，直到看到over输入end结束！");
+           Console.WriteLine("先输入start运行，直到看到over后，输入continue继续，直到看到over输入end结束！");
             Console.ReadLine();
 
             foreach (var el in arrayStock)
+            
+            
             {
+                
+               // SetpTwo("吉高宁宁 ".Trim().ToString());
                 SetpTwo(el.Trim().ToString());
 
             }
@@ -224,7 +228,7 @@ namespace SampleApp
             if (count2 > 0)
             {
 
-                //logger.LogInformation(sb.ToString());
+                logger.LogInformation(sb.ToString());
 
                 sb.Clear();
 
@@ -248,20 +252,16 @@ namespace SampleApp
 
 
 
-
+                if (string.IsNullOrEmpty(obj.data.httpurl_preview)) return;
                 sb2.Append(code).Append(i);
                 sb2.ToString().Replace(",", "");
                 sb2.Append(",")
-                    .Append(string.IsNullOrEmpty(obj.data.httpurl) ? obj.data.httpurl_preview.Replace("https:","http:") : obj.data.httpurl.Replace("https:", "http:"));
+                    .Append(string.IsNullOrEmpty(obj.data.httpurl) ? obj.data.httpurl_preview.Replace("https:","http:").Replace("?300","") : obj.data.httpurl.Replace("https:", "http:").Replace("?300", ""));
 
 
                 if (sb2.Length > 0)
                 {
-
-                    
-
-
-                    logger.LogInformation("sb2.ToString()",null);
+                    logger.LogDebug(sb2.ToString(),null);
                     sb2.Clear();
 
                 }
@@ -274,7 +274,7 @@ namespace SampleApp
             }
             finally
             {
-                Console.WriteLine("所有上榜 \n" + url);
+               Console.WriteLine("所有上榜 \n" + url);
             }
 
         }
